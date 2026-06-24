@@ -23,3 +23,16 @@ sns.scatterplot(data=df, x='petal length (cm)', y='petal width (cm)', hue='speci
 plt.title('Petal Length vs Width by Species')
 plt.show()
 
+# Graph 1
+df['sepal length (cm)'].hist(bins=20)
+plt.title('Sepal Length Distribution')
+plt.xlabel('Sepal Length (cm)')
+plt.ylabel('Count')
+plt.savefig('sepal_histogram.png', dpi=150, bbox_inches='tight')
+plt.close()
+
+# Graph 2
+sns.scatterplot(data=df, x='petal length (cm)', y='petal width (cm)', hue='species')
+plt.title('Petal Length vs Width by Species')
+plt.savefig('petal_scatter.png', dpi=150, bbox_inches='tight')
+plt.close()
