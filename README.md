@@ -1,21 +1,14 @@
-# 🌸 Iris Dataset Analysis
-
-## Overview
-Exploratory data analysis of the classic Iris dataset using Python.
-150 samples across 3 species: Setosa, Versicolor, and Virginica.
+# Iris Dataset Mini-Project
 
 ## Libraries Used
-| Library | Purpose |
-|---|---|
-| scikit-learn | Loading the dataset |
-| pandas | Data manipulation |
-| matplotlib | Plotting |
-| seaborn | Statistical visualizations |
+- scikit-learn — loading the dataset
+- pandas — data manipulation
+- matplotlib & seaborn — visualizations
 
-## Key Findings
+## What I found
+- 150 samples, 50 per species: setosa, versicolor, virginica
 - Petal length and width are the strongest features for separating species
-- Setosa is clearly distinct from the other two
-- Versicolor and Virginica overlap slightly in petal dimensions
+- Setosa is clearly distinct; versicolor and virginica overlap slightly
 
 ## Visualizations
 

@@ -1,38 +1,34 @@
+# ── Imports ───────────────────────────────────────────────
 from sklearn.datasets import load_iris
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+# ── Load & prepare data ───────────────────────────────────
 iris = load_iris()
 
 df = pd.DataFrame(iris.data, columns=iris.feature_names)
 df['species'] = iris.target
 df['species'] = df['species'].map({0: 'setosa', 1: 'versicolor', 2: 'virginica'})
 
+# ── Basic statistics ──────────────────────────────────────
 print(df.head())
 print(df.describe())
 print(df['species'].value_counts())
 
-df['sepal length (cm)'].hist(bins=20)
-plt.title('Sepal Length Distribution')
-plt.xlabel('Sepal Length (cm)')
-plt.ylabel('Count')
-plt.show()
-
-sns.scatterplot(data=df, x='petal length (cm)', y='petal width (cm)', hue='species')
-plt.title('Petal Length vs Width by Species')
-plt.show()
-
-# Graph 1
+# ── Visualizations ────────────────────────────────────────
+# Sepal length distribution
 df['sepal length (cm)'].hist(bins=20)
 plt.title('Sepal Length Distribution')
 plt.xlabel('Sepal Length (cm)')
 plt.ylabel('Count')
 plt.savefig('sepal_histogram.png', dpi=150, bbox_inches='tight')
+plt.show()
 plt.close()
 
-# Graph 2
+# Petal length vs width by species
 sns.scatterplot(data=df, x='petal length (cm)', y='petal width (cm)', hue='species')
 plt.title('Petal Length vs Width by Species')
 plt.savefig('petal_scatter.png', dpi=150, bbox_inches='tight')
+plt.show()
 plt.close()
